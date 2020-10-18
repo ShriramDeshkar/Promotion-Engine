@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Promotion_Engine.Models
 {
-    class Order
+   public class Order
     {
         public int OrderID { get; set; }
         public List<Product> Products { get; set; }
