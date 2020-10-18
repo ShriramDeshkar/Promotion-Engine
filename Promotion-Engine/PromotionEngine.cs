@@ -27,7 +27,10 @@ namespace Promotion_Engine
             {
                 if (ord.Products.FirstOrDefault(x => x.Id == i) != null)
                 {
-                    nopromotionval += copp * ord.Products.FirstOrDefault(x => x.Id == i).Price;
+                    if(copp != 0)
+                        nopromotionval += copp * ord.Products.FirstOrDefault(x => x.Id == i).Price;
+                    else
+                        nopromotionval += ord.Products.FirstOrDefault(x => x.Id == i).Price;
                 }
             }
             return d + nopromotionval;
